@@ -6,7 +6,11 @@
 
     <groupId>cydeo</groupId>
     <artifactId>SeleniumPractice</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>../../IdeaProjects/SeleniumPractice/AvengerPracticeHours</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

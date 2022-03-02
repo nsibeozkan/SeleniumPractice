@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
       //  WebDriverManager.chromedriver().setup();
        // driver=new ChromeDriver();
        // driver.manage().window().maximize();
-       driver= WebDriverFactory.getDriver("chrome");
+         driver= WebDriverFactory.getDriver("chrome");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 

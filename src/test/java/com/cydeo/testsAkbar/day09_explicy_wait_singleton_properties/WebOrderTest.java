@@ -20,11 +20,24 @@ public class WebOrderTest extends TestBase {
         //click login button
        driver.findElement(By.id("ctl00_MainContent_login_button")).click();
 */
-        WebOrderUtility.login(driver);
-        BrowserUtil.waitFor(3);
 
 
         //todo create a class called WebOrderUtility
         //create a static void method to login(username,password) accept  2 string for username password
+        //WebOrderUtility.login(driver);
+        //login page
+        WebOrderUtility.login(driver,"Tester","test");
+        System.out.println("is at order page " + WebOrderUtility.isAtOrderPage(driver));
+        BrowserUtil.waitFor(2);
+        //logout page
+        WebOrderUtility.logout(driver);
+        BrowserUtil.waitFor(2);
+
+        WebOrderUtility.login(driver,"bla","bla");
+        System.out.println("is at order page " + WebOrderUtility.isAtOrderPage(driver));
+
+
+        WebOrderUtility.isAtOrderPage(driver);
+        BrowserUtil.waitFor(2);
     }
 }

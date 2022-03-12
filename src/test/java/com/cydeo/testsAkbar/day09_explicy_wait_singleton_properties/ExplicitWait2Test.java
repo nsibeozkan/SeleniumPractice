@@ -29,7 +29,7 @@ public class ExplicitWait2Test extends TestBase {
           //this will  wait for 7 second max for input element located by css selector
         //enable,interactive,visible
 
-          wait.until(elementToBeClickable(By.cssSelector("form#input-example >input")));
+          wait.until(elementToBeClickable(inputField));
           // enter something into the input filed
          inputField.sendKeys("Hello World");
         BrowserUtil.waitFor(5);

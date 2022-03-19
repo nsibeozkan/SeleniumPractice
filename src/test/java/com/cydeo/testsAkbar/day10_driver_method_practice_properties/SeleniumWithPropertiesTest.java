@@ -17,6 +17,7 @@ public class SeleniumWithPropertiesTest extends TestBase {
         Driver.getDriver().get(url);
         //if you want to directly use the returned value instead of saving it
        // Driver.getDriver().get(ConfigReader.read("url"));
+       // WebOrderUtil.openWebOrderApp();
         WebOrderUtil.login(username,password);
 
 

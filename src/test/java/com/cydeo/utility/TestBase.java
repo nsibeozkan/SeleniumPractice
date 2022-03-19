@@ -14,11 +14,11 @@ import java.util.concurrent.TimeUnit;
 //todo Driver.getDriver() so it can be same driver everywhere whenever you use
 
       public abstract class TestBase {
-      protected WebDriver driver;
+         protected WebDriver driver;
     //setting up all driver stuff here directly in @BeforeEach method
 
-     @BeforeEach
-     public void setupWebDriver(){
+           @BeforeEach
+         public void setupWebDriver(){
       //  WebDriverManager.chromedriver().setup();
        // driver=new ChromeDriver();
        // driver.manage().window().maximize();

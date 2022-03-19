@@ -3,6 +3,7 @@ package com.cydeo.utility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Driver {
 
@@ -14,11 +15,25 @@ public class Driver {
     *same Webdriver if exists,new one if null
      */
     public static WebDriver getDriver(){
+        //read the browser type you want to launch from properties file
+        String browserName=ConfigReader.read("browser");
         if(obj==null){
-            WebDriverManager.chromedriver().setup();
-            obj=new ChromeDriver();
+            //according to browser type set up driver correctly
 
-           // System.out.println("one and only created for the first time");
+            switch (browserName) {
+                case "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    obj=new ChromeDriver();
+                    break;
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    obj=new FirefoxDriver();
+                    break;
+                default:
+                    obj=null;
+                    System.out.println("UNKNOWN BROWSER TYPE!!!"+browserName);
+            }
+            // System.out.println("one and only created for the first time");
             return obj;
         }else{
           //  System.out.println("you have it just use existing one");
